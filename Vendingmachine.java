@@ -6,6 +6,7 @@ class Vendingmachine
 	static int[] itemsno={5,5,5};
 	static int[] item_price={25,35,45};
 
+	//to check whether item is valid or not
 	public static boolean checkValidItem(String s){
 		for(int i=0;i<items.length;i++)
 		{
@@ -16,7 +17,7 @@ class Vendingmachine
 	}
 	
 
-
+	//to return the index of that item
 	public static int returnIndex(String s){
 		for(int i=0;i<items.length;i++){
 			if(items[i].equals(s))
@@ -24,6 +25,8 @@ class Vendingmachine
 		}
 		return -1;
 	}
+
+	//to check the cents 
 	public static boolean checkingCent(int cent){
 		for(int i=0;i<cents.length;i++)
 		{
@@ -32,6 +35,8 @@ class Vendingmachine
 		}
 		return false;
 	}
+
+	//to check whether insert cents are more than the price of item
 	public static boolean checkPrice(int cent,String s){
 		int i=returnIndex(s);
 		if(i!=-1)
@@ -41,6 +46,8 @@ class Vendingmachine
 		}
 		return false;
 	}
+
+	// to check whether the item is  available or not
 	public static boolean checkStock(String s)
 	{
 		int i=returnIndex(s);
@@ -51,6 +58,8 @@ class Vendingmachine
 		}
 		return false;
 	}
+
+	//to update item count
 	public static void updateItemno(String s){
 		int i=returnIndex(s);
 		if(i!=-1)
@@ -59,6 +68,7 @@ class Vendingmachine
 		}
 	}
 
+	// main vending maching code
 	public static void machineCode(){
 		Scanner ob=new Scanner(System.in);
 		String s;
